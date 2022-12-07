@@ -33,19 +33,19 @@ return secure_library
 
 --[[ @example:
 	local new_class = secure_library(function()
-	local structure do
-		structure = {}
-		structure.__index = structure
-	end
+		local structure do
+			structure = {}
+			structure.__index = structure
+		end
 
-	structure.FIRST = 1
-	structure.MESSAGE = "Hello!"
+		structure.FIRST = 1
+		structure.MESSAGE = "Hello!"
 
-	function structure:get()
-		return self.FIRST, self.MESSAGE
-	end
+		function structure:get()
+			return self.FIRST, self.MESSAGE
+		end
 
-	return structure
+		return structure
 	end)
 
 	print(new_class.FIRST, new_class.MESSAGE) -> 1 Hello!
