@@ -29,29 +29,31 @@ local secure_library = function(create_function)
 	return setmetatable(source, metatable)
 end
 
+return secure_library
+
 --[[ @example:
-    local new_class = secure_library(function()
-        local structure do
-            structure = {}
-            structure.__index = structure
-        end
+	local new_class = secure_library(function()
+	local structure do
+		structure = {}
+		structure.__index = structure
+	end
 
-        structure.FIRST = 1
-        structure.MESSAGE = "Hello!"
+	structure.FIRST = 1
+	structure.MESSAGE = "Hello!"
 
-        function structure:get()
-            return self.FIRST, self.MESSAGE
-        end
+	function structure:get()
+		return self.FIRST, self.MESSAGE
+	end
 
-        return structure
-    end)
-	
+	return structure
+	end)
+
 	print(new_class.FIRST, new_class.MESSAGE) -> 1 Hello!
 	print(new_class:get()) -> 1 Hello!
-	
+
 	new_class.init_new_variable = true -> Error: this library has read-only access!
 	print(new_class.init_new_variable) -> nil
-	
+
 	for field, object in pairs(new_class) do
 		--- @note: loop will not work and inspect values due to security!
 	end
