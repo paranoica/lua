@@ -8,7 +8,7 @@ local vector do
     vector.check_arguments = function(x, y, z)
         local arguments = {x, y, z}
         for _, object in pairs(arguments) do
-            if type(object) ~= "number" or (tostring(object) == "inf" or tostring(object) == "-inf" or tostring(object) == "nan" or tostring(object) == "-nan") then
+            if type(object) ~= "number" or object == math.huge then
                 print(("Error: the argument in the vector was expected to be a number, but %s:%s was received!"):format(object, type(object)))
                 return false
             end
