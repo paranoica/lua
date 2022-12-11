@@ -47,7 +47,7 @@ local vector do
 	
 	function vector:unpack()
 		return self.x, self.y, self.z
-    end
+	end
     
     function vector:clone(x, y, z)
         return vector.new(
