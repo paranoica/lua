@@ -44,6 +44,10 @@ local vector do
             return process(first, second)
         end
     end
+	
+	function vector:unpack()
+		return self.x, self.y, self.z
+    end
     
     function vector:clone(x, y, z)
         return vector.new(
