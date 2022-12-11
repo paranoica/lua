@@ -44,6 +44,14 @@ local vector do
             return process(first, second)
         end
     end
+    
+    function vector:clone(x, y, z)
+        return vector.new(
+            type(x) == "nil" and self.x or x,
+            type(y) == "nil" and self.y or y,
+            type(z) == "nil" and self.z or z
+        )
+    end
 
     function vector:set(x, y, z)
         self.x = type(x) == "table" and x.x or (type(x) == "number" and x or self.x)
