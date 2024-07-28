@@ -2,7 +2,7 @@
 --- @export : -> automatic
 --- @listing : -> disabled
 
---- @description: cleaning the gargabe from possible contamination from past loads
+--- @description cleaning the gargabe from possible contamination from past loads
 collectgarbage("collect")
 
 --- @region tools for script
