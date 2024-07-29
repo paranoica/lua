@@ -272,7 +272,7 @@ do
 
     --- @param self angle
     --- @return @class[{angle}]
-    --- @description: round number in the higher position [angle(1.5, 2.5, 3.5):floor()]->[angle(2, 3, 4)]
+    --- @description: round number in the higher position [angle(1.5, 2.5, 3.5):ceil()]->[angle(2, 3, 4)]
     function angle:ceil()
         self.p = math.ceil(self.p)
         self.y = math.ceil(self.y)
@@ -285,7 +285,7 @@ do
     --- @param slow_method boolean
     --- @param precision number
     --- @return @class[{angle}]
-    --- @description: round number in the faor position [angle(1.3, 2.6, 3.25):floor()]->[angle(1, 3, 3)]
+    --- @description: round number in the faor position [angle(1.3, 2.6, 3.25):round()]->[angle(1, 3, 3)]
     --- @description: [{slow_method}]-> making really accurate calculations
     --- @description: [{precision}]-> last point of rounding break
     function angle:round(slow_method, precision)
@@ -702,7 +702,7 @@ do
 
     --- @param self vector
     --- @return @class[{vector}]
-    --- @description: round number in the higher position [vector(1.5, 2.5, 3.5):floor()]->[vector(2, 3, 4)]
+    --- @description: round number in the higher position [vector(1.5, 2.5, 3.5):ceil()]->[vector(2, 3, 4)]
     function vector:ceil()
         self.x = math.ceil(self.x)
         self.y = math.ceil(self.y)
@@ -715,7 +715,7 @@ do
     --- @param slow_method boolean
     --- @param precision number
     --- @return @class[{vector}]
-    --- @description: round number in the faor position [vector(1.3, 2.6, 3.25):floor()]->[vector(1, 3, 3)]
+    --- @description: round number in the faor position [vector(1.3, 2.6, 3.25):round()]->[vector(1, 3, 3)]
     --- @description: [{slow_method}]-> making really accurate calculations
     --- @description: [{precision}]-> last point of rounding break
     function vector:round(slow_method, precision)
