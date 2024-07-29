@@ -1146,7 +1146,7 @@ end
 --- @region: __ENV
 local __ENV = {
     __AUTHOR = "paranoica",
-    __VERSION = "[vector_angle].lua 28.07.2024 1.0",
+    __VERSION = "vector_angle.lua 28.07.2024 1.0",
     __URL = "https://github.com/paranoica/lua/modules/vector_angle.lua",
     __LICENSE = [[
         MIT License
