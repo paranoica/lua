@@ -383,7 +383,7 @@ local o_table = {} do
         end
     
         for i = point, break_p do
-            table.insert(src, array[i])
+            src[#src + 1] = array[i]
         end
     
         return src
@@ -439,5 +439,3 @@ end
 --- @diagnostic enable
 --- @export : -> disabled
 --- @listing : -> enabled
-
---todo [#@table + 1] = @anything
