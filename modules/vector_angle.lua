@@ -178,7 +178,7 @@ do
     --- @param self angle
     --- @param need_return boolean
     --- @return number, number, number
-    --- @return @void
+    --- @return @self
     --- @description: return itself as {[...]} if need_return->{true}, otherwise prints one time the content of {[...]}
     function angle:inspect(need_return)
         if need_return then
@@ -186,7 +186,7 @@ do
         end
 
         print(self.p, self.y, self.r)
-        return
+        return self
     end
 
     --- @param self angle
@@ -608,7 +608,7 @@ do
     --- @param self vector
     --- @param need_return boolean
     --- @return number, number, number
-    --- @return @void
+    --- @return @self
     --- @description: return itself as {[...]} if need_return->{true}, otherwise prints one time the content of {[...]}
     function vector:inspect(need_return)
         if need_return then
@@ -616,7 +616,7 @@ do
         end
 
         print(self.x, self.y, self.z)
-        return
+        return self
     end
 
     --- @param self vector
