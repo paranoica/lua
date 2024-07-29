@@ -74,12 +74,12 @@ local warning, valid_input, clamp do
 end
 --- @endregion
 
---- @region: creating modules
+--- @region: create {angle, vector} modules
 local angle = {}
 local vector = {}
 --- @endregion
 
---- @region: updating {angle} module
+--- @region: update {angle} module
 do
     --- @param content table
     --- @return boolean
@@ -497,7 +497,7 @@ do
 end
 --- @endregion
 
---- @region: vector
+--- @region: update {vector} module
 do
     --- @param content table
     --- @return boolean
