@@ -123,13 +123,13 @@ do
     end
 
     --- @param self angle
-    --- @return angle
+    --- @return string
     angle.__tostring = function(self)
         return string.format("angle(p: %f, y: %f, r: %f)", self.p, self.y, self.r)
     end
 
     --- @param self angle
-    --- @return angle
+    --- @return string
     angle.__concat = function(v1, v2)
         return tostring(v1) .. " | " .. tostring(v2)
     end
@@ -537,13 +537,13 @@ do
     end
 
     --- @param self vector
-    --- @return vector
+    --- @return string
     vector.__tostring = function(self)
         return string.format("vector(x: %f, y: %f, z: %f)", self.x, self.y, self.z)
     end
     
     --- @param self vector
-    --- @return vector
+    --- @return string
     vector.__concat = function(v1, v2)
         return tostring(v1) .. " | " .. tostring(v2)
     end
