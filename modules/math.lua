@@ -5,7 +5,7 @@
 --- @description: cleaning the gargabe from possible contamination from past loads
 collectgarbage("collect")
 
---- @region: update {math} module
+--- @region: create and update {math} module
 local o_math = {} do
     --- @param x number
     --- @param base number
