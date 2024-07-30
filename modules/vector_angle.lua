@@ -58,7 +58,7 @@ local warning, valid_input, clamp do
         end
         
         if type(input) == "number" then
-            return input ~= math.huge, "The argument in the vector is very large!"
+            return input ~= math.huge, "The argument in the @class is very large!"
         end
     
         return false, ("The argument was expected to be a number, but %s (%s) was received!"):format(input, type(input))
@@ -354,6 +354,7 @@ do
     --- @return @class[{angle}]
     --- @description: create the interpolation process between two class[{angle}]
     function angle:lerp(new, weight)
+        local weight = weight or 0.5
         local delta = self:difference(new)
   
         if delta.p > weight then
@@ -380,11 +381,7 @@ do
             delta.r = new.r
         end
     
-        self.p = delta.p
-        self.y = delta.y
-        self.r = delta.r
-    
-        return self
+        return self:copy():set(delta)
     end
 
     --- @param self angle
@@ -1046,7 +1043,7 @@ do
             return self
         end
 
-        return self + (new - self) * weight
+        return self + (new - self) * (weight or 0.5)
     end
 
     --- @param self vector
@@ -1060,13 +1057,7 @@ do
             return self
         end
 
-        local lerp = self:get_lerp(new, weight)
-
-        self.x = lerp.x
-        self.y = lerp.y
-        self.z = lerp.z
-
-        return self
+        return self:copy():set(self:get_lerp(new, weight))
     end
 
     --- @param self vector
