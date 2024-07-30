@@ -58,7 +58,7 @@ local warning, valid_input, clamp, round do
         end
         
         if type(input) == "number" then
-            return input ~= math.huge, "The argument in the vector is very large!"
+            return input ~= math.huge, "The argument in the color is very large!"
         end
     
         return false, ("The argument was expected to be a number, but %s (%s) was received!"):format(input, type(input))
@@ -1591,6 +1591,35 @@ local color = {} do
     --- @description: shades the argument[{@self[@class[{color}]]}]
     function color:shade(strength)
         return self:lighten(self.l - self.l * (strength or 0.5))
+    end
+
+    --- @param self color
+    --- @param new color
+    --- @param weight interpolate speed
+    --- @return number
+    --- @description: returns the interpolation progress
+    function color:get_lerp(new, weight)
+        if not is_color(new) then
+            warning("The function only supports [color]-data!")
+            return self
+        end
+
+        return self + (new - self) * (weight or 0.5)
+    end
+
+    --- @param self color
+    --- @param new color
+    --- @param weight interpolate speed
+    --- @return @class[{color}]
+    --- @description: create the interpolation process between two class[{color}]
+    function color:lerp(new, weight)
+        if not is_color(new) then
+            warning("The function only supports [color]-data!")
+            return self
+        end
+
+        local lerp = self:get_lerp(new, weight)
+        return self:copy():set(lerp.r, lerp.g, lerp.b, lerp.a)
     end
 end
 --- @endregion
