@@ -1593,8 +1593,6 @@ local color = {} do
         return self:lighten(self.l - self.l * (strength or 0.5))
     end
 end
-
-local f = color(168, 219, 127):show_presets()
 --- @endregion
 
 --- @region: __ENV
