@@ -374,11 +374,11 @@ alert["__ENV"] = __ENV
         }
     }
 
-    --object:load_translation(translations) --> error: [en] language is already exists in base.
+    object:load_translation(translations) --> error: [en] language is already exists in base.
     object:load_translation(other_translations) --> succesfull
 
-    --object:load_translation_from_file("./translations/de.lua") --> error: [de] language is already exists in base.
-    --object:load_translation_from_file("./translations/fr.lua") --> succesfull
+    object:load_translation_from_file("./translations/de.lua") --> error: [de] language is already exists in base.
+    object:load_translation_from_file("./translations/fr.lua") --> succesfull
 
     --[
         example of the translation file:
