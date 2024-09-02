@@ -400,6 +400,10 @@ alert["__ENV"] = __ENV
             cat = "Cats name is %{name}.",
             cat_age = "Cats age is %{age}.",
             cat_status = "Today cat is in %s mood and he wanna %d fishes."
+        },
+
+        ru = {
+            ....
         }
     })
 
